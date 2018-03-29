@@ -8,8 +8,6 @@
       <module fileurl="file://$PROJECT_DIR$/bos-service/bos-service.iml" filepath="$PROJECT_DIR$/bos-service/bos-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/bos-utils/bos-utils.iml" filepath="$PROJECT_DIR$/bos-utils/bos-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/bos-web/bos-web.iml" filepath="$PROJECT_DIR$/bos-web/bos-web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bos-web/bos-web.iml" filepath="$PROJECT_DIR$/bos-web/bos-web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bosutils/bosutils.iml" filepath="$PROJECT_DIR$/bosutils/bosutils.iml" />
     </modules>
   </component>
 </project>
