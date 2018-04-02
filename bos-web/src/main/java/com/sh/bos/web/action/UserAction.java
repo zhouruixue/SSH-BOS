@@ -67,7 +67,6 @@ public class UserAction extends BaseAction<User> {
 		String f = "1";
 		//获取当前登录用户
 		User user = BOSUtils.getLoginUser();
-		System.out.println("-------------------------"+model.getPassword());
 		try{
 			userService.editPassword(user.getId(),model.getPassword());
 		}catch(Exception e){
