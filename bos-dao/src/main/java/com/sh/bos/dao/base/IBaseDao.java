@@ -1,5 +1,7 @@
 package com.sh.bos.dao.base;
 
+import com.sh.bos.utils.PageBean;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -16,4 +18,5 @@ public interface IBaseDao<T> {
 	public T findById(Serializable id);
 	public List<T> findAll();
 	public void executeUpdate(String queryName,Object...objects);
+	public void pageQuery(PageBean pageBean);
 }
