@@ -4,6 +4,7 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<constant name="struts.devMode" value="false" />
+	<!--<constant name="struts.multipart.saveDir" value="/tmp"/>-->
 	<!-- 
 		<constant name="struts.objectFactory" value="spring"/>
 	 -->
@@ -25,6 +26,7 @@
 		<!--将myStack设置成默认-->
 		<default-interceptor-ref name="myStack"/>
 
+
 		<!--配置全局结果集-->
 		<global-results>
 			<result name="login">/login.jsp</result>
@@ -43,6 +45,11 @@
 		<!--取派员管理-->
 		<action name="staffAction_*" class="staffAction"  method="{1}">
 			<result name="list">/WEB-INF/pages/base/staff.jsp</result>
+		</action>
+
+		<!--区域管理-->
+		<action name="regionAction_*" class="regionAction"  method="{1}">
+
 		</action>
 	</package>
 </struts>

@@ -1,7 +1,7 @@
 package com.sh.bos.service.impl;
 
 import com.sh.bos.domain.Staff;
-import com.sh.bos.dao.base.StaffDao;
+import com.sh.bos.dao.StaffDao;
 import com.sh.bos.service.StaffService;
 import com.sh.bos.utils.PageBean;
 import org.apache.commons.lang3.StringUtils;

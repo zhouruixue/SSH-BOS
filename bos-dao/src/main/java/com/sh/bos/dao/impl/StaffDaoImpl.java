@@ -1,6 +1,7 @@
-package com.sh.bos.dao.base.impl;
+package com.sh.bos.dao.impl;
 
-import com.sh.bos.dao.base.StaffDao;
+import com.sh.bos.dao.StaffDao;
+import com.sh.bos.dao.base.impl.BaseDaoImpl;
 import com.sh.bos.domain.Staff;
 import org.springframework.stereotype.Repository;
 
