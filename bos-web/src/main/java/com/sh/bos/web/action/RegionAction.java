@@ -39,7 +39,6 @@ public class RegionAction extends BaseAction<Region> {
     /**
      * 区域导入
      */
-
     public String importXls() throws IOException {
         List<Region> regionList = new ArrayList<Region>();
         // 使用POI解析Excel文件
@@ -76,30 +75,40 @@ public class RegionAction extends BaseAction<Region> {
         return NONE;
     }
 
-    private int page;
-    private int rows;
     /**
      * 分页查询
      */
     public String pageQuery() throws IOException {
         regionService.pageQuery(pageBean);
-        this.java2Json(pageBean,new String[]{"currentPage","detachedCriteria","pageSize"});
+        this.java2Json(pageBean,new String[]{"currentPage","detachedCriteria","pageSize","subareas"});
         return NONE;
     }
 
-    public int getPage() {
-        return page;
+    // 输入框的值
+    private String q;
+
+    public String getQ() {
+        return q;
     }
 
-    public void setPage(int page) {
-        this.page = page;
+    public void setQ(String q) {
+        this.q = q;
     }
 
-    public int getRows() {
-        return rows;
+    /**
+     * 查询所有区域，返回json数据
+     * @return
+     */
+    public String listAjax(){
+        List<Region> list = null;
+        // 如果输入条件为空查询所有，不为空按条件查询
+        if(StringUtils.isNotBlank(q)){
+            list = regionService.findListByQ(q);
+        }else{
+            list = regionService.findAll();
+        }
+        this.java2Json(list,new String[]{"currentPage","detachedCriteria","pageSize","subareas"});
+        return NONE;
     }
 
-    public void setRows(int rows) {
-        this.rows = rows;
-    }
 }

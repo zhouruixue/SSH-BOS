@@ -89,6 +89,8 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements IBaseDao<T> {
 
 		// 查询rows-- 当前页需要展示的数据集合
 		detachedCriteria.setProjection(null);// 指定hibernate框架发送sql的形式 select * from bc_staff
+		// 指定Hibernate框架封装对象的方式
+		detachedCriteria.setResultTransformer(DetachedCriteria.ROOT_ENTITY);
 		int firstResult = (currentPage-1)*pageSize;
 		int maxResult = pageSize;
 		List rows = this.getHibernateTemplate().findByCriteria(detachedCriteria, firstResult, maxResult);
@@ -98,5 +100,7 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements IBaseDao<T> {
 	public void saveOrUpdate(T entity) {
 		this.getHibernateTemplate().saveOrUpdate(entity);
 	}
+
+
 
 }

@@ -28,12 +28,16 @@ public class StaffAction extends BaseAction<Staff>{
         return LIST;
     }
 
-    // 分页查询
+    /**
+     * 分页查询
+     * @return
+     * @throws IOException
+     */
     public String pageQuery() throws IOException {
-
+        // 调用service分页查询
         staffService.pageQuery(pageBean);
+        // 转json并响应到页面
         this.java2Json(pageBean,new String[]{"currentPage","detachedCriteria","pageSize"});
-
         return NONE;
     }
 
