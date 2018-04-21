@@ -16,4 +16,6 @@ public interface SubareaService {
     public void pageQuery(PageBean pageBean);
 
     public List<Subarea> findAll();
+
+    public List<Subarea> findListNotAssociation();
 }

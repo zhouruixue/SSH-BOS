@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author lee leeshuhua@163.com
@@ -37,7 +38,7 @@ public class StaffAction extends BaseAction<Staff>{
         // 调用service分页查询
         staffService.pageQuery(pageBean);
         // 转json并响应到页面
-        this.java2Json(pageBean,new String[]{"currentPage","detachedCriteria","pageSize"});
+        this.java2Json(pageBean,new String[]{"decidedzones","currentPage","detachedCriteria","pageSize"});
         return NONE;
     }
 
@@ -62,6 +63,16 @@ public class StaffAction extends BaseAction<Staff>{
 
         staffService.update(staff);
         return LIST;
+    }
+
+    /**
+     * 查询所有未删除的取派员，返回json
+     * @return
+     */
+    public String listAjax(){
+        List<Staff> list = staffService.findListNotDelete();
+        this.java2Json(list,new String[]{"decidedzones"});
+        return NONE;
     }
 
     public String getIds() {

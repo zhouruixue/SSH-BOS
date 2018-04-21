@@ -59,6 +59,11 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements IBaseDao<T> {
 		return (List<T>) this.getHibernateTemplate().find(hql);
 	}
 
+	@Override
+	public List<T> findByCriteria(DetachedCriteria detachedCriteria) {
+		return (List<T>) this.getHibernateTemplate().findByCriteria(detachedCriteria);
+	}
+
 	// 执行更新
 	public void executeUpdate(String queryName, Object... objects) {
 		Session session = this.getSessionFactory().getCurrentSession();

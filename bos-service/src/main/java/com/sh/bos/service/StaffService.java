@@ -1,7 +1,11 @@
 package com.sh.bos.service;
 
 import com.sh.bos.domain.Staff;
-import com.sh.bos.utils.PageBean; /**
+import com.sh.bos.utils.PageBean;
+
+import java.util.List;
+
+/**
  * @author lee leeshuhua@163.com
  * @create 2018-04-02 15:43
  **/
@@ -17,4 +21,6 @@ public interface StaffService {
     public Staff findById(String id);
 
     public void update(Staff staff);
+
+    public List<Staff> findListNotDelete();
 }

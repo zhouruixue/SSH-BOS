@@ -17,6 +17,9 @@ public class Subarea implements java.io.Serializable {
 	private String single;
 	private String position;
 
+	public String getSubareaid(){
+		return id;
+	}
 	// Constructors
 
 	/** default constructor */
